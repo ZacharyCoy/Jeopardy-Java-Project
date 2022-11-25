@@ -65,5 +65,10 @@ public class MainWindowController {
     public Button buttonE5;
     @FXML
     public Button buttonE6;
+
+    //When the button is clicked, The class QuestionClass is called and called A1,A2,B1 ect.. a new window will open with the question and a text field to answer the question in.
+
+    public void buttonA1Clicked() {
+        QuestionClass A1 = new QuestionClass();
+
     }
-}
