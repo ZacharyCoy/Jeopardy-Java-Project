@@ -68,7 +68,11 @@ public class MainWindowController {
 
     //When the button is clicked, The class QuestionClass is called and called A1,A2,B1 ect.. a new window will open with the question and a text field to answer the question in.
 
-    public void buttonA1Clicked() {
-        QuestionClass A1 = new QuestionClass();
+    onaction="#button" + row + column
+    row = A,B,C,D,E;
+    column = 1,2,3,4,5,6;
+
+
+
 
     }
