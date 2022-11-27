@@ -1,19 +1,16 @@
 package com.example.jeopardyjavaproject;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import java.lang.Math;
+
+
 import java.util.Random;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 
 
 public class QuestionClass {
     private String QuestionPartII;
     private String answer;
-    private int value;
+    private String value;
     private String Question;
     private ArrayList<Integer> usedNumbers = new ArrayList<Integer>();
 
@@ -24,11 +21,23 @@ public class QuestionClass {
             numbers.add(i);
         }
     }
+    //constructor
+    public void QuestionClass() {
+        this.QuestionPartII = "";
+        this.answer = "";
+        this.Question = "";
+    }
+    //copy constructor
+    public void QuestionClass(QuestionClass other) {
+        this.QuestionPartII = other.QuestionPartII;
+        this.answer = other.answer;
+        this.Question = other.Question;
+    }
 
-    public void getQuestion(String value) {
+    public String[] getQuestion(String value) {
+        this.value = value;
         this.Question = Question;
         this.QuestionPartII = QuestionPartII;
-        boolean isCorrect = false;
         //pick random number from arraylist numbers and store it in number, then remove it from arraylist
         Random rand = new Random();
         int number = rand.nextInt(numbers.size());
@@ -260,7 +269,16 @@ public class QuestionClass {
                         value);
                this.answer = "needle";
         }
+    //return this.Question, this.QuestionPartII, this.answer encapsulated in a string array
+
+        String[] questionArray = new String[3];
+        questionArray[0] = new String(this.Question);
+        questionArray[1] = new String(this.QuestionPartII);
+        questionArray[2] = new String(this.answer);
+        return questionArray;
+    }
     }
 
-}
+
+
 
