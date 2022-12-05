@@ -1,45 +1,27 @@
 package com.example.jeopardyjavaproject;
 
 
-
-
-import java.util.Arrays;
-import java.util.Random;
-import java.util.ArrayList;
-
-
-
-
 public class QuestionClass {
+
     private String QuestionPartII;
     private String answer;
     private String value;
-
-    private int number;
     private String Question;
-    private ArrayList<Integer> UnusedQuestions;
 
 
     //create array list with ints 0-35
 
     //constructor
-    public void QuestionClass() {
+    public QuestionClass() {
         this.QuestionPartII = "";
         this.answer = "";
         this.Question = "";
 
     }
-    //copy constructor
-    public void QuestionClass(QuestionClass other) {
-        this.QuestionPartII = other.QuestionPartII;
-        this.answer = other.answer;
-        this.Question = other.Question;
-    }
 
     public void getQuestion(String prize, int number) {
         this.value = prize;
-        this.number = number;
-           if(number == 0) {
+        if(number == 0) {
                this.Question = "A wizard who cannot do magic is known as a: ";
                this.QuestionPartII = "Harry Potter for "+value+ "\nWhat is: ";
                this.answer = "squib";
@@ -75,7 +57,7 @@ public class QuestionClass {
                 this.answer = "three";
                     }
             else if(number ==  6){
-                this.Question = "Who plays Ron Weasly in the movies? <br> (Full name please)";
+                this.Question = "The actor plays Ron Weasly's full name is?)";
                 this.QuestionPartII = "Harry Potter for "+value+ " \nWhat is: ";
                 this.answer = "rupert grint";
                     }
@@ -116,7 +98,7 @@ public class QuestionClass {
                     }
 
             else if(number ==  14){
-                this.Question = "In \"Hercules,\" Hades promised not to harm Megara if Hercules gave up his strength for how long?";
+                this.Question = "In Hercules, Hades promised not to harm Megara if Hercules gave up his strength for how long?";
                 this.QuestionPartII = "Disney for "+value+ " \nWhat is: ";
                 this.answer = "24 hours";
                     }
@@ -136,7 +118,7 @@ public class QuestionClass {
                this.answer = "a lannister always pays his debt";
                     }
             else if(number ==  18){
-                this.Question = "What does the spell \"Obliviate\" do? <br>a. Destroy objects <br>b. Make objects invisible <br>c. Remove parts of someone's memory ";
+                this.Question = "What does the spell Obliviate do? \n a). Destroy objects \n b). Make objects invisible \n c). Remove parts of someone's memory ";
                 this.QuestionPartII = "Harry Potter for "+value+ " \nWhat is: ";
                this.answer = "c";
                     }
@@ -151,7 +133,7 @@ public class QuestionClass {
                 this.answer = "venessa";
                     }
             else if(number ==  21){
-                this.Question = "What was the name of the roller coaster in which Spongebob and Patrick suffered spine loss?<br>a. Pit o' Fire<br>b. Fist o' Pain";
+                this.Question = "What was the name of the roller coaster in which Spongebob and Patrick suffered spine loss?\na. Pit o' Fire\nb. Fist o' Pain";
                 this.QuestionPartII = "SpongeBob for "+value+ " \nWhat is: ";
                this.answer = "b";
                     }
@@ -196,9 +178,9 @@ public class QuestionClass {
                 this.answer = "shaggydog";
                     }
             else if(number == 30){
-                this.Question = "Which Hogwarts founder did the Sorting Hat originally belong to? <br>(Please Spell correctly)";
+                this.Question = "What position does Harry play on his Quidditch team?";
                 this.QuestionPartII = "Harry Potter for "+value+ "  \nWhat is: ";
-               this.answer = "godric gryffindor";
+               this.answer = "seeker";
                     }
             else if(number ==  31){
                 this.Question = "The Millenium Falcon was able to complete the Kessel Run in fewer than ___ parsecs.";
@@ -206,7 +188,7 @@ public class QuestionClass {
                 this.answer = "twelve";
                     }
             else if(number == 32){
-                this.Question = "What does the matchmaker criticize Mulan for?<br>a. Too tall<br>b. Too skinny<br>c. Bad Posture";
+                this.Question = "What does the matchmaker criticize Mulan for?\na. Too tall\nb. Too skinny\nc. Bad Posture";
                 this.QuestionPartII = "Disney for "+value+ " \n What is: ";
                this.answer = "b";
                     }
@@ -228,13 +210,13 @@ public class QuestionClass {
         }
 
         public String getQuestionPartI(){
-            return new String(this.Question);
+            return this.Question;
         }
         public String getQuestionPartII(){
-            return new String(this.QuestionPartII);
+            return this.QuestionPartII;
         }
         public String getAnswer(){
-            return new String(this.answer);
+            return this.answer;
         }
 
     }

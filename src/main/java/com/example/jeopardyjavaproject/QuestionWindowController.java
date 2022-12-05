@@ -2,27 +2,19 @@ package com.example.jeopardyjavaproject;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
-import javafx.stage.Window;
-
 import java.io.IOException;
-import java.util.ArrayList;
 
 
 
 public class QuestionWindowController {
-    private Stage stage;
-
-    private Parent root2;
-
-    private Window window;
     @FXML
     public Label QuestionAsked;
     @FXML
@@ -34,12 +26,14 @@ public class QuestionWindowController {
 
     int CurrentScore;
 
-
+//Initialize the variables that will be passed to the QuestionClass through the getQuestion method
     String QuestionValue = "";
     int QuestionNumber = 0;
     int Score;
-
+//Initialize the QuestionClass
     QuestionClass Question = new QuestionClass();
+
+//Initialize the Booleans that keep track of whether the user has pressed the button, if they have, then the button will be disabled and turned grey
     private boolean buttonA1Used;
     private boolean buttonA2Used;
     private boolean buttonA3Used;
@@ -62,7 +56,6 @@ public class QuestionWindowController {
     private boolean buttonD2Used;
     private boolean buttonD3Used;
     private boolean buttonD4Used;
-
     private boolean buttonD5Used;
     private boolean buttonD6Used;
     private boolean buttonE1Used;
@@ -72,21 +65,24 @@ public class QuestionWindowController {
     private boolean buttonE5Used;
     private boolean buttonE6Used;
 
-    public void Initialize() throws IOException{
-        //if a intilaization of the QuestionClass is not already done. initialize it with name Question
+    public void Initialize(){
+        //if an initialization of the QuestionClass is not already done. initialize it with name Question
         if(Question == null){
             Question = new QuestionClass();
 
         }
+        //Set the labels to the questions
         Question.getQuestion(QuestionValue, QuestionNumber);
         QuestionAsked.setText(Question.getQuestionPartI());
-        QuestionAskedPartII.setText(Question.getQuestionPartII().toString());
+        QuestionAskedPartII.setText(Question.getQuestionPartII());
 
     }
+    //Check the answer by comparing the answer we get from the user to the answer we get from the question class
     public void CheckAnswer(){
         String Answer = UsersAnswer.getText();
         System.out.println("User Answer: " + Answer+ " Correct Answer: " + Question.getAnswer());
-        if(Answer.equals(Question.getAnswer())){
+        //Cleaning the user input to make it easier to compare
+        if(Answer.toLowerCase().equals(Question.getAnswer())){
             System.out.println("Correct");
             Score = Integer.parseInt((QuestionValue.substring(1)));
             System.out.println("Score: " + Score);
@@ -98,6 +94,7 @@ public class QuestionWindowController {
     }
 
     public void getBooleansFromMain(boolean buttonA1Used, boolean buttonA2Used, boolean buttonA3Used, boolean buttonA4Used, boolean buttonA5Used, boolean buttonA6Used, boolean buttonB1Used, boolean buttonB2Used, boolean buttonB3Used, boolean buttonB4Used, boolean buttonB5Used, boolean buttonB6Used, boolean buttonC1Used, boolean buttonC2Used, boolean buttonC3Used, boolean buttonC4Used, boolean buttonC5Used, boolean buttonC6Used, boolean buttonD1Used, boolean buttonD2Used, boolean buttonD3Used, boolean buttonD4Used, boolean buttonD5Used, boolean buttonD6Used, boolean buttonE1Used, boolean buttonE2Used, boolean buttonE3Used, boolean buttonE4Used, boolean buttonE5Used, boolean buttonE6Used){
+System.out.println("Boolean Variables Transferred to QuestionWindowController");
     this.buttonA1Used = buttonA1Used;
     this.buttonA2Used = buttonA2Used;
     this.buttonA3Used = buttonA3Used;
@@ -131,29 +128,37 @@ public class QuestionWindowController {
     }
 
 
-    public void getVariablesFromMain(String value, int number, int CurrentScore) throws IOException{
+    public void getVariablesFromMain(String value, int number, int CurrentScore) {
         this.QuestionValue = value;
         this.QuestionNumber = number;
         this.CurrentScore = CurrentScore;
     }
 
-    public void SubmitUserAnswer(ActionEvent event) throws IOException {
+    public void SubmitUserAnswer(ActionEvent event) {
+        try{
         //switch back the Main Window
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
         Parent root = loader.load();
         //Getting the controller of QuestionWindow.fxml
         MainWindowController MainWindowFXMLController = loader.getController();
+        //Check the answer
         CheckAnswer();
+        //Have the Main Window Controller get the variables from the Question Window Controller
         MainWindowFXMLController.getVariablesFromQuestion(QuestionValue, QuestionNumber, Score, CurrentScore);
         MainWindowFXMLController.getBooleansFromQuestionScene(buttonA1Used, buttonA2Used, buttonA3Used, buttonA4Used, buttonA5Used, buttonA6Used, buttonB1Used, buttonB2Used, buttonB3Used, buttonB4Used, buttonB5Used, buttonB6Used, buttonC1Used, buttonC2Used, buttonC3Used, buttonC4Used, buttonC5Used, buttonC6Used, buttonD1Used, buttonD2Used, buttonD3Used, buttonD4Used, buttonD5Used, buttonD6Used, buttonE1Used, buttonE2Used, buttonE3Used, buttonE4Used, buttonE5Used, buttonE6Used);
+        //Have the Main Window Controller calculate the score and update the label
         MainWindowFXMLController.CalculateCurrentScore();
+        //Used the boolean variables to disable and grey out the buttons
         MainWindowFXMLController.ButtonGreyedOut();
         //Setting the scene
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root,600, 360);
         stage.setScene(scene);
-        stage.setTitle("Main Window");
-        stage.show();
+        stage.setTitle("Jeopardy");
+        stage.show();}
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 

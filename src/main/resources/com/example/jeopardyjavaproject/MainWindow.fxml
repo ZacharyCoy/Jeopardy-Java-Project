@@ -18,7 +18,7 @@
    <children>
       <AnchorPane prefHeight="0.0" prefWidth="474.0">
          <children>
-            <Label layoutX="394.0" text="Score:" textFill="WHITE">
+            <Label layoutX="389.0" text="Score: $" textFill="WHITE">
                <font>
                   <Font name="Impact" size="14.0" />
                </font>
@@ -34,7 +34,7 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #3A5FC6;" text="Category 1" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #3A5FC6;" text="Harry Potter" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Impact" size="14.0" />
                      </font>
@@ -50,7 +50,7 @@
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #3A5FC6;" text="Category 2" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #3A5FC6;" text="Star Wars" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Impact" size="14.0" />
                      </font>
@@ -66,7 +66,7 @@
             </VBox>
             <VBox layoutX="110.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #3A5FC6;" text="Category 3" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #3A5FC6;" text="Disney" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Impact" size="14.0" />
                      </font>
@@ -82,7 +82,7 @@
             </VBox>
             <VBox layoutX="210.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #3A5FC6;" text="Category 4" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #3A5FC6;" text="SpongeBob" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Impact" size="14.0" />
                      </font>
@@ -98,9 +98,9 @@
             </VBox>
             <VBox layoutX="310.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #3A5FC6;" text="Category 5" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #3A5FC6;" text="Lord of the Rings" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font name="Impact" size="14.0" />
+                        <Font name="Impact" size="11.0" />
                      </font>
                      <effect>
                         <DropShadow height="39.72" radius="15.265" width="23.34">
@@ -114,9 +114,9 @@
             </VBox>
             <VBox layoutX="390.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #3A5FC6;" text="Category 6" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #3A5FC6;" text="Game of Thrones" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font name="Impact" size="14.0" />
+                        <Font name="Impact" size="11.0" />
                      </font>
                      <effect>
                         <DropShadow height="39.72" radius="15.265" width="23.34">
