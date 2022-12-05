@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
@@ -15,6 +16,20 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
+      <AnchorPane prefHeight="0.0" prefWidth="474.0">
+         <children>
+            <Label layoutX="394.0" text="Score:" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="ScoreLabel" layoutX="437.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
       <HBox layoutX="30.0" layoutY="30.0" prefHeight="100.0" prefWidth="200.0">
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
@@ -119,7 +134,7 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonA1" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$200" textFill="#e49a2c">
+                  <Button fx:id="buttonA1" mnemonicParsing="false" onAction="#buttonA1Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$200" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -138,7 +153,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonA2" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$200" textFill="#e49a2c">
+                  <Button fx:id="buttonA2" mnemonicParsing="false" onAction="#buttonA2Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$200" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -157,7 +172,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonA3" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$200" textFill="#e49a2c">
+                  <Button fx:id="buttonA3" mnemonicParsing="false" onAction="#buttonA3Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$200" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -176,7 +191,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonA4" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$200" textFill="#e49a2c">
+                  <Button fx:id="buttonA4" mnemonicParsing="false" onAction="#buttonA4Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$200" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -195,7 +210,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonA5" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$200" textFill="#e49a2c">
+                  <Button fx:id="buttonA5" mnemonicParsing="false" onAction="#buttonA5Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$200" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -214,7 +229,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonA6" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$200" textFill="#e49a2c">
+                  <Button fx:id="buttonA6" mnemonicParsing="false" onAction="#buttonA6Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$200" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -236,7 +251,7 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonB1" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$400" textFill="#e49a2c">
+                  <Button fx:id="buttonB1" mnemonicParsing="false" onAction="#buttonB1Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$400" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -255,7 +270,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonB2" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$400" textFill="#e49a2c">
+                  <Button fx:id="buttonB2" mnemonicParsing="false" onAction="#buttonB2Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$400" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -274,7 +289,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonB3" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$400" textFill="#e49a2c">
+                  <Button fx:id="buttonB3" mnemonicParsing="false" onAction="#buttonB3Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$400" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -293,7 +308,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonB4" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$400" textFill="#e49a2c">
+                  <Button fx:id="buttonB4" mnemonicParsing="false" onAction="#buttonB4Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$400" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -312,7 +327,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonB5" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$400" textFill="#e49a2c">
+                  <Button fx:id="buttonB5" mnemonicParsing="false" onAction="#buttonB5Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$400" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -331,7 +346,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonB6" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$400" textFill="#e49a2c">
+                  <Button fx:id="buttonB6" mnemonicParsing="false" onAction="#buttonB6Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$400" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -354,7 +369,7 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonC1" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$600" textFill="#e49a2c">
+                  <Button fx:id="buttonC1" mnemonicParsing="false" onAction="#buttonC1Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$600" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -373,7 +388,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonC2" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$600" textFill="#e49a2c">
+                  <Button fx:id="buttonC2" mnemonicParsing="false" onAction="#buttonC2Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$600" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -392,7 +407,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonC3" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$600" textFill="#e49a2c">
+                  <Button fx:id="buttonC3" mnemonicParsing="false" onAction="#buttonC3Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$600" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -411,7 +426,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonC4" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$600" textFill="#e49a2c">
+                  <Button fx:id="buttonC4" mnemonicParsing="false" onAction="#buttonC4Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$600" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -430,7 +445,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonC5" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$600" textFill="#e49a2c">
+                  <Button fx:id="buttonC5" mnemonicParsing="false" onAction="#buttonC5Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$600" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -449,7 +464,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonC6" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$600" textFill="#e49a2c">
+                  <Button fx:id="buttonC6" mnemonicParsing="false" onAction="#buttonC6Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$600" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -472,7 +487,7 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonD1" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$800" textFill="#e49a2c">
+                  <Button fx:id="buttonD1" mnemonicParsing="false" onAction="#buttonD1Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$800" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -491,7 +506,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonD2" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$800" textFill="#e49a2c">
+                  <Button fx:id="buttonD2" mnemonicParsing="false" onAction="#buttonD2Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$800" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -510,7 +525,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonD3" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$800" textFill="#e49a2c">
+                  <Button fx:id="buttonD3" mnemonicParsing="false" onAction="#buttonD3Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$800" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -529,7 +544,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonD4" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$800" textFill="#e49a2c">
+                  <Button fx:id="buttonD4" mnemonicParsing="false" onAction="#buttonD4Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$800" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -548,7 +563,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonD5" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$800" textFill="#e49a2c">
+                  <Button fx:id="buttonD5" mnemonicParsing="false" onAction="#buttonD5Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$800" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -567,7 +582,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonD6" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$800" textFill="#e49a2c">
+                  <Button fx:id="buttonD6" mnemonicParsing="false" onAction="#buttonD6Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$800" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -590,7 +605,7 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonE1" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$1000" textFill="#e49a2c">
+                  <Button fx:id="buttonE1" mnemonicParsing="false" onAction="#buttonE1Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$1000" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -609,7 +624,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonE2" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$1000" textFill="#e49a2c">
+                  <Button fx:id="buttonE2" mnemonicParsing="false" onAction="#buttonE2Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$1000" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -628,7 +643,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonE3" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$1000" textFill="#e49a2c">
+                  <Button fx:id="buttonE3" mnemonicParsing="false" onAction="#buttonE3Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$1000" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -647,7 +662,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonE4" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$1000" textFill="#e49a2c">
+                  <Button fx:id="buttonE4" mnemonicParsing="false" onAction="#buttonE4Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$1000" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -666,7 +681,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonE5" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$1000" textFill="#e49a2c">
+                  <Button fx:id="buttonE5" mnemonicParsing="false" onAction="#buttonE5Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$1000" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -685,7 +700,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="buttonE6" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$1000" textFill="#e49a2c">
+                  <Button fx:id="buttonE6" mnemonicParsing="false" onAction="#buttonE6Clicked" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #3A5FC6;" text="\$1000" textFill="#e49a2c">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
