@@ -13,7 +13,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.8.2</junit.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -109,7 +108,9 @@
     </dependencies>
 
     <build>
+
         <plugins>
+            <!-- AppMap agent, default parameters -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

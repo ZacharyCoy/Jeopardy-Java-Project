@@ -8,6 +8,7 @@ module com.example.jeopardyjavaproject {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
+    requires javafx.media;
 
     opens com.example.jeopardyjavaproject to javafx.fxml;
     exports com.example.jeopardyjavaproject;

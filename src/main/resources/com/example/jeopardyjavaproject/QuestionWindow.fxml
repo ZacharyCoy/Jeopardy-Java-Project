@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="questionWindowFXID" prefHeight="360.0" prefWidth="514.0" style="-fx-background-color: #4369D2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jeopardyjavaproject.QuestionWindowController">
+<AnchorPane prefHeight="360.0" prefWidth="514.0" style="-fx-background-color: #4369D2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jeopardyjavaproject.QuestionWindowController">
    <children>
       <VBox layoutY="9.0" prefHeight="360.0" prefWidth="600.0">
          <children>

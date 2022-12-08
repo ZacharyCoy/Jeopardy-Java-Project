@@ -10,30 +10,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 
 public class MainWindowController{
-
-    public MainWindowController() {
-        ScoreLabel = new Label(String.valueOf(CurrentScore));
-        System.out.println("Tried to set score label with value " + CurrentScore);
-    }
-    //have label ScoreLabel be set to the current score when the window is opened
     @FXML
     private Label ScoreLabel;
-
-
-    public void CalculateCurrentScore(){
-        CurrentScore = CurrentScore + Score;
-        System.out.println("Current Score calculated at the CalculateCurrentScore Function is: " + CurrentScore);
-        ScoreLabel.setText(String.valueOf(CurrentScore));
-        System.out.println("Tried to change Label with CalculateCurrentScore");
-
-
-    }
-
     @FXML
     public Button buttonA1;
     @FXML
@@ -99,10 +81,6 @@ public class MainWindowController{
     @FXML
     public Button SubmitAnswer;
 
-
-    int CurrentScore = 0;
-    int Score = 0;
-
     //initialize the booleans for the buttons
     boolean buttonA1Used;
     boolean buttonA2Used;
@@ -137,14 +115,47 @@ public class MainWindowController{
 
     int number = 0;
     String value = "";
+    int CurrentScore = 0;
+    int Score = 0;
 
+    //have label ScoreLabel be set to the current score when the window is opened
+    public MainWindowController() {
+        ScoreLabel = new Label(String.valueOf(CurrentScore));
+    }
+
+    /**
+     * Calculates the current score and updates the score label.
+     * The current score is determined by adding the current score
+     * and the score, and then updating the text of the score label
+     * with the new current score.
+     */
+    public void CalculateCurrentScore(){
+        CurrentScore = CurrentScore + Score;
+        ScoreLabel.setText(String.valueOf(CurrentScore));
+    }
+    /**
+     * Assigns the values of the given parameters to the corresponding
+     * instance variables in the class.
+     *
+     * @param value The value to assign to the 'value' instance variable.
+     * @param number The value to assign to the 'number' instance variable.
+     * @param Score The value to assign to the 'Score' instance variable.
+     * @param CurrentScore The value to assign to the 'CurrentScore' instance variable.
+     * @throws IOException If an input or output error occurs.
+     */
     public void getVariablesFromQuestion(String value, int number, int Score, int CurrentScore) throws IOException{
         this.value = value;
         this.number = number;
         this.CurrentScore = CurrentScore;
         this.Score = Score;
-        System.out.println("Current Score: " + CurrentScore);
     }
+
+    /**
+     * Grays out buttons that have been used.
+     * This method checks each button's 'used' variable and,
+     * if the button has been used, sets its background color
+     * to gray (#808080).
+     */
     public void ButtonGreyedOut(){
         //Check if the button has been used with variable buttonA1Used, if it has been used, grey out the button
         if(buttonA1Used){
@@ -239,7 +250,21 @@ public class MainWindowController{
         }
     }
 
-
+    /**
+     * Switches to the question scene and passes variables to the
+     * QuestionWindowController.
+     * This method loads the "QuestionWindow.fxml" file, gets the
+     * controller for the file, and assigns the values of the given
+     * parameters to the corresponding instance variables in the
+     * controller. It also calls the `Initialize()` method in the
+     * controller to initialize the scene. Finally, it sets the scene
+     * to the "Question Window" and shows the scene.
+     *
+     * @param event The action event that triggered the method call.
+     * @param value The value to assign to the 'value' instance variable in the controller.
+     * @param number The value to assign to the 'number' instance variable in the controller.
+     * @throws IOException If an input or output error occurs.
+     */
         public void switchToQuestionScene (ActionEvent event, String value, int number) throws IOException {
             this.value = value;
             this.number = number;
@@ -262,7 +287,12 @@ public class MainWindowController{
             stage.show();
         }
 
-//This method is used to get the variables from the main window to the question window
+/**
+ * Gets the boolean values from the question scene and assigns them
+ * to the corresponding instance variables in the class.
+ * It then assigns the values of the given parameters to the
+ * corresponding instance variables in the class.
+ */
     public void getBooleansFromQuestionScene(boolean buttonA1Used, boolean buttonA2Used, boolean buttonA3Used, boolean buttonA4Used, boolean buttonA5Used, boolean buttonA6Used, boolean buttonB1Used, boolean buttonB2Used, boolean buttonB3Used, boolean buttonB4Used, boolean buttonB5Used, boolean buttonB6Used, boolean buttonC1Used, boolean buttonC2Used, boolean buttonC3Used, boolean buttonC4Used, boolean buttonC5Used, boolean buttonC6Used, boolean buttonD1Used, boolean buttonD2Used, boolean buttonD3Used, boolean buttonD4Used, boolean buttonD5Used, boolean buttonD6Used, boolean buttonE1Used, boolean buttonE2Used, boolean buttonE3Used, boolean buttonE4Used, boolean buttonE5Used, boolean buttonE6Used){
         System.out.println("Boolean Variables transferred to Main Window");
         this.buttonA1Used = buttonA1Used;
@@ -296,7 +326,17 @@ public class MainWindowController{
         this.buttonE5Used = buttonE5Used;
         this.buttonE6Used = buttonE6Used;
     }
-
+    /**
+     * Handles the event when the buttons are clicked.
+     * This method checks if the 'button[letter][number]' button has already been
+     * used. If it hasn't been used, it sets the 'buttonA1Used'
+     * instance variable to true and calls the
+     * `switchToQuestionScene()` method, passing the action event
+     * and the values on as arguments.
+     *
+     * @param Actionevent The action event that triggered the method call.
+     * @throws IOException If an input or output error occurs.
+     */
     public void buttonA1Clicked (ActionEvent Actionevent) throws IOException {
         if (!buttonA1Used) {
             buttonA1Used = true;
