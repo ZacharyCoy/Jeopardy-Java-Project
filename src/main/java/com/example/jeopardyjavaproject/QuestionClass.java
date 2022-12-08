@@ -33,6 +33,10 @@ public class QuestionClass {
      *
      * @param prize the prize associated with the question
      * @param number the number identifying the specific question
+     *
+     *
+     *               IMPORTANT: These questions came from https://github.com/JacqBlaq/Jeopardy-Game/blob/master/Jeopardy%20Game/bin/javaProject/Jeopardy.class
+     *               however, I changed the code completely to fit my needs.
      */
 
     public void getQuestion(String prize, int number) {
