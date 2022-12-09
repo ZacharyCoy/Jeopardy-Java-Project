@@ -115,12 +115,12 @@ public class MainWindowController{
 
     int number = 0;
     String value = "";
-    int CurrentScore = 0;
-    int Score = 0;
+    int currentScore = 0;
+    int score = 0;
 
     //have label ScoreLabel be set to the current score when the window is opened
     public MainWindowController() {
-        ScoreLabel = new Label(String.valueOf(CurrentScore));
+        ScoreLabel = new Label(String.valueOf(currentScore));
     }
 
     /**
@@ -130,8 +130,8 @@ public class MainWindowController{
      * with the new current score.
      */
     public void CalculateCurrentScore(){
-        CurrentScore = CurrentScore + Score;
-        ScoreLabel.setText(String.valueOf(CurrentScore));
+        currentScore = currentScore + score;
+        ScoreLabel.setText(String.valueOf(currentScore));
     }
     /**
      * Assigns the values of the given parameters to the corresponding
@@ -139,15 +139,15 @@ public class MainWindowController{
      *
      * @param value The value to assign to the 'value' instance variable.
      * @param number The value to assign to the 'number' instance variable.
-     * @param Score The value to assign to the 'Score' instance variable.
-     * @param CurrentScore The value to assign to the 'CurrentScore' instance variable.
+     * @param score The value to assign to the 'Score' instance variable.
+     * @param currentScore The value to assign to the 'CurrentScore' instance variable.
      * @throws IOException If an input or output error occurs.
      */
-    public void getVariablesFromQuestion(String value, int number, int Score, int CurrentScore) throws IOException{
+    public void getVariablesFromQuestion(String value, int number, int score, int currentScore) throws IOException{
         this.value = value;
         this.number = number;
-        this.CurrentScore = CurrentScore;
-        this.Score = Score;
+        this.currentScore = currentScore;
+        this.score = score;
     }
 
     /**
@@ -273,7 +273,7 @@ public class MainWindowController{
             Parent root = loader.load();
             //Getting the controller of QuestionWindow.fxml
             QuestionWindowController QuestionWindowsFXMLController = loader.getController();
-            QuestionWindowsFXMLController.getVariablesFromMain(this.value, this.number, this.CurrentScore);
+            QuestionWindowsFXMLController.getVariablesFromMain(this.value, this.number, this.currentScore);
             QuestionWindowsFXMLController.getBooleansFromMain(this.buttonA1Used, this.buttonA2Used, this.buttonA3Used, this.buttonA4Used, this.buttonA5Used, this.buttonA6Used, this.buttonB1Used, this.buttonB2Used, this.buttonB3Used, this.buttonB4Used, this.buttonB5Used, this.buttonB6Used, this.buttonC1Used, this.buttonC2Used, this.buttonC3Used, this.buttonC4Used, this.buttonC5Used, this.buttonC6Used, this.buttonD1Used, this.buttonD2Used, this.buttonD3Used, this.buttonD4Used, this.buttonD5Used, this.buttonD6Used, this.buttonE1Used, this.buttonE2Used, this.buttonE3Used, this.buttonE4Used, this.buttonE5Used, this.buttonE6Used);
             System.out.println("The value of the button is " + this.value);
             System.out.println("The number of the button is " + this.number);

@@ -26,12 +26,12 @@ public class QuestionWindowController {
     @FXML
     public Button SubmitAnswer;
 
-    int CurrentScore;
+    int currentScore;
 
 //Initialize the variables that will be passed to the QuestionClass through the getQuestion method
-    String QuestionValue = "";
-    int QuestionNumber = 0;
-    int Score;
+    String questionValue = "";
+    int questionNumber = 0;
+    int score;
 //Initialize the QuestionClass
     QuestionClass Question = new QuestionClass();
 
@@ -79,7 +79,7 @@ public class QuestionWindowController {
 
         }
         //Set the labels to the questions
-        Question.getQuestion(QuestionValue, QuestionNumber);
+        Question.getQuestion(questionValue, questionNumber);
         QuestionAsked.setText(Question.getQuestionPartI());
         QuestionAskedPartII.setText(Question.getQuestionPartII());
 
@@ -94,21 +94,21 @@ public class QuestionWindowController {
      * correct answer. If the user's answer is correct, it updates the `Score` instance
      * variable. Otherwise, it sets the `Score` variable to 0.
      *
-     * @return
+     * @return boolean true if the user's answer is correct, false otherwise
      */
     public boolean CheckAnswer(){
-        String Answer = UsersAnswer.getText();
-        System.out.println("User Answer: " + Answer+ " Correct Answer: " + Question.getAnswer());
+        String answer = UsersAnswer.getText();
+        System.out.println("User Answer: " + answer+ " Correct Answer: " + Question.getAnswer());
         //Cleaning the user input to make it easier to compare
-        if(Answer.toLowerCase().equals(Question.getAnswer())){
+        if(answer.toLowerCase().equals(Question.getAnswer())){
             System.out.println("Correct");
-            Score = Integer.parseInt((QuestionValue.substring(1)));
-            System.out.println("Score: " + Score);
+            score = Integer.parseInt((questionValue.substring(1)));
+            System.out.println("Score: " + score);
             return true;
         }
         else{
             System.out.println("Incorrect");
-            Score = 0;
+            score = 0;
         }
         return false;
     }
@@ -191,12 +191,12 @@ System.out.println("Boolean Variables Transferred to QuestionWindowController");
      *
      * @param value the question value
      * @param number the question number
-     * @param CurrentScore the current score
+     * @param currentScore the current score
      */
-    public void getVariablesFromMain(String value, int number, int CurrentScore) {
-        this.QuestionValue = value;
-        this.QuestionNumber = number;
-        this.CurrentScore = CurrentScore;
+    public void getVariablesFromMain(String value, int number, int currentScore) {
+        this.questionValue = value;
+        this.questionNumber = number;
+        this.currentScore = currentScore;
     }
 
 
@@ -212,9 +212,9 @@ System.out.println("Boolean Variables Transferred to QuestionWindowController");
     public void SubmitUserAnswer(ActionEvent event) {
         try{
             boolean isCorrect = CheckAnswer();
-            String message = "";
+            String message;
             if (isCorrect) {
-                message = "Correct! +" + QuestionValue;
+                message = "Correct! +" + questionValue;
             } else {
                 message = "Incorrect! The correct answer was: " + Question.getAnswer();
             }
@@ -226,7 +226,7 @@ System.out.println("Boolean Variables Transferred to QuestionWindowController");
             //Getting the controller of QuestionWindow.fxml
             MainWindowController MainWindowFXMLController = loader.getController();
             //Have the Main Window Controller get the variables from the Question Window Controller
-            MainWindowFXMLController.getVariablesFromQuestion(QuestionValue, QuestionNumber, Score, CurrentScore);
+            MainWindowFXMLController.getVariablesFromQuestion(questionValue, questionNumber, score, currentScore);
             MainWindowFXMLController.getBooleansFromQuestionScene(buttonA1Used, buttonA2Used, buttonA3Used, buttonA4Used, buttonA5Used, buttonA6Used, buttonB1Used, buttonB2Used, buttonB3Used, buttonB4Used, buttonB5Used, buttonB6Used, buttonC1Used, buttonC2Used, buttonC3Used, buttonC4Used, buttonC5Used, buttonC6Used, buttonD1Used, buttonD2Used, buttonD3Used, buttonD4Used, buttonD5Used, buttonD6Used, buttonE1Used, buttonE2Used, buttonE3Used, buttonE4Used, buttonE5Used, buttonE6Used);
             //Have the Main Window Controller calculate the score and update the label
             MainWindowFXMLController.CalculateCurrentScore();
